@@ -16,7 +16,7 @@ class AlwaysBetKingKuhnPokerPlayer(KuhnPokerPlayer):
         if self.get_current_card() == KuhnPokerCard.King:
             return KuhnPokerAction.BET
         else:
-            return choice([KuhnPokerAction.BET, KuhnPokerAction.PASS])
+            return choice([KuhnPokerAction.BET, KuhnPokerAction.PASS] )
 
     def event_action(self, pos: int, action, new_state: State):
         # ignore

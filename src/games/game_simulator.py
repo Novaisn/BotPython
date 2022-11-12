@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from games.player import Player
-from games.state import State
+from src.games.player import Player
+from src.games.state import State
 
 
 class GameSimulator(ABC):
@@ -112,6 +112,9 @@ class GameSimulator(ABC):
             while True:
                 selected_action = players[pos].get_action(state.clone())
                 if state.validate_action(selected_action):
+                    break
+                ###
+                if state.validate_move(selected_action):
                     break
 
             state.play(selected_action)
